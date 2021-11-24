@@ -34,7 +34,7 @@ export class WeatherService {
   getCurrentWeather(city: string): Observable<ICurrentWeather> {
     return this.httpClient
       .get<ICurrentWeatherData>(
-        `${environment.baseUrl}?q=${city}&appid=${environment.appId}`
+        `${environment.baseUrl}?q=${city}&appid=${environment.appID}`
       )
       .pipe(map((data) => this.transformToICurrentWeather(data)));
   }
